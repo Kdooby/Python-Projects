@@ -15,8 +15,9 @@ class Business:
         # Describes restaurant NAME and TYPE
         msg = f"This is a {self.business_type} named {self.name}!"
         return msg
-
+        
     def type_hours_locations(self):
+        # Simply describe how different business vary
         msg = "The hours and locations for each business will vary, depending on the type of business it is."
         return msg
     
@@ -32,6 +33,7 @@ class Restaurant(Business):
     cuisine_type = 'Italian'
     hours_open = '9 AM - 10 PM'
 
+    # takes the method from the Parent Class and changes it to relate to the Child Class
     def type_hours_locations(self):
         msg = f"This business serves {self.cuisine_type} food, and is open from {self.hours_open}!\n"
         return msg
@@ -45,6 +47,7 @@ class Movie_Theater(Business):
     locations = 'Redmond, Woodinville, Bothell, and Bellevue'
     type_of_movies = 'all the major Blockbuster hits!'
 
+    # takes the method from the Parent Class and changes it to relate to the Child Class
     def type_hours_locations(self):
         msg = f"This movie theater has locations in {self.locations}, and is known for playing {self.type_of_movies}!"
         return msg
