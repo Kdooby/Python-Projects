@@ -19,10 +19,12 @@ class thirdClass(firstClass):
 #Object of secondClass
 second_obj = secondClass()
 second_obj.task()
+# calls the method from the parent class
 second_obj.parent("Example 1")
 
 
 #Object of thirdClass
 third_obj = thirdClass()
 third_obj.task()
+# calls the method from the parent class
 third_obj.parent("Example 2")
