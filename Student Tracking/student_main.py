@@ -74,7 +74,7 @@ class ParentWindow(Frame):
         helpmenu.add_separator()
         helpmenu.add_command(label="How to use this program")
         helpmenu.add_separator()
-        helpmenu.add_command(label="About This Student Tracker") # add_command is a child menubar item of the add_cascde parent item
+        helpmenu.add_command(label="About This Student Tracker") # add_command is a child menubar item of the add_cascade parent item
         menubar.add_cascade(label="Help", menu=helpmenu) # add_cascade is a parent menubar item (visible heading)
         """
             Finally, we apply the config method of the widget to display the menu
