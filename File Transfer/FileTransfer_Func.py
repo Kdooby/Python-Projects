@@ -33,41 +33,49 @@ def center_window(self, w, h): # pass in the tkinter frame (master) reference an
 
 
 # catch if the user wants to close the app
-def ask_quit(self):
+def ask_quit():
     if messagebox.askokcancel("Exit program", "Okay to exit application?"):
         # This closes app
-        self.master.destroy()
+        master.destroy(self)
         os._exit(0)
+    ask_quit()
 
-def browse(self):
-        self.filepath.set(filedialog.askopenfilename(initialdir=self.initialdir,
-                          filetypes=self.filetypes))  
+def browseSrc():
+    # set where the source of the files are
+    source = filedialog.askdirectory()
+    source.filepath.set(filedialog.askopenfilename(initialdir=initialdir,
+                    filetypes=filetypes))
+    browseSrc()
+
+def browseDest():
+    # set where the source of the files are
+    destination = filedialog.askdirectory()
+    destination.filepath.set(filedialog.askopenfilename(initialdir=initialdir,
+                    filetypes=filetypes))
+    browseDest()
 
 
-# TRANSFER FILES SECTION
 
+### TRANSFER FILES SECTION ###
 seconds_in_day = 24 * 60 * 60
+
 # The time it is now
 now = time.time()
-
+    
 # The time it is now, minus the last 24 hours
 before = now - seconds_in_day
 
-# set where the source of the files are
-source = 'C:/Users/kevin/Desktop/Folder A/'
-
 # set the destination path to folder B
-destination = 'C:/Users/kevin/Desktop/Folder B/'
 
 def last_mod_time(fname):
     return os.path.getmtime(fname)
 
-for fname in os.listdir(source):
-    src_fname = os.path.join(source, fname)
-    if last_mod_time(src_fname) > before:
-        dst_fname = os.path.join(destination, fname)
-        shutil.move(src_fname, dst_fname)
-           
+    for fname in os.listdir(source):
+        src_fname = os.path.join(source, fname)
+        if last_mod_time(src_fname) > before:
+            dst_fname = os.path.join(destination, fname)
+            shutil.move(src_fname, dst_fname)
+               
 
 
 

@@ -23,9 +23,9 @@ destination = 'C:/Users/kevin/Desktop/Folder B/'
 def last_mod_time(fname):
     return os.path.getmtime(fname)
 
-for fname in os.listdir(source):
-    src_fname = os.path.join(source, fname)
-    if last_mod_time(src_fname) > before:
-        dst_fname = os.path.join(destination, fname)
-        shutil.move(src_fname, dst_fname)
-           
+    for fname in os.listdir(source):
+        src_fname = os.path.join(source, fname)
+        if last_mod_time(src_fname) > before:
+            dst_fname = os.path.join(destination, fname)
+            shutil.move(src_fname, dst_fname)
+               

@@ -24,10 +24,10 @@ import FileTransfer_Func
 
 
 def load_gui(self):
-    self.btnBrowse = tk.Button(self.master, text = 'Source Folder', width = 13, height = 1, command = FileTransfer_Func.browse)
+    self.btnBrowse = tk.Button(self.master, text = 'Source Folder', width = 13, height = 1, command = FileTransfer_Func.browseSrc)
     self.btnBrowse.grid(row = 0, column = 0, padx = (20,0), pady = (30, 0))
 
-    self.btnBrowse = tk.Button(self.master, text = 'Destination Folder', width = 13, height = 1, command = FileTransfer_Func.browse)
+    self.btnBrowse = tk.Button(self.master, text = 'Destination Folder', width = 13, height = 1, command = FileTransfer_Func.browseDest)
     self.btnBrowse.grid(row = 1, column = 0, padx = (20,0), pady = (30, 0))
         
     self.btnTransfer = tk.Button(self.master, text = 'Transfer Files', width = 13, height = 1, command = FileTransfer_Func.last_mod_time)
@@ -37,8 +37,8 @@ def load_gui(self):
     self.btnClose.grid(row = 2, column = 2, padx = (0,0), pady = (3, 0))
 
     # Calls the "ENTRY" Widget that was imported 
-    self.source = tk.Entry(self.master, textvariable=self.filepath, width = 35, bg='lightgray', font = ('Helvetica', 12))
-    self.source.grid(row = 0, column = 2, padx = (30,0), pady = (30, 0))
+    self.src = tk.Entry(self.master, textvariable=self.filepath, width = 35, bg='lightgray', font = ('Helvetica', 12))
+    self.src.grid(row = 0, column = 2, padx = (30,0), pady = (30, 0))
 
     self.dest = tk.Entry(self.master, textvariable=self.filepath2, width = 35, bg='lightgray', font = ('Helvetica', 12))
     self.dest.grid(row = 1, column = 2, padx = (30,0), pady = (30, 0))
