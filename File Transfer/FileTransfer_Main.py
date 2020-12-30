@@ -32,18 +32,26 @@ class ParentWindow(tk.Frame):
         self.master.geometry(f'{600}x{150}')
         # define the file information
 
+
+          # displays the initial directory "/" when opened
+        self.initialdir = initialdir
+        # displays the different filetype options in the directory
+        self.filetypes = filetypes
+
+        
         # source filepath
         self.filepath = tk.StringVar()
 
         # destination filepath
         self.filepath2 = tk.StringVar()
 
-        self.initialdir = initialdir
-        self.filetypes = filetypes
+      
         
         # This CenterWindow method will center our app on the user's screen
         FileTransfer_Func.center_window(self,600,150)
+        # Title at top of window
         self.master.title("File Transfer")
+        # color of window
         self.master.configure(bg="#f0f0f0")
         
 
