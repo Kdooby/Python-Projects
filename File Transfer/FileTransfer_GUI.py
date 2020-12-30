@@ -24,16 +24,16 @@ import FileTransfer_Func
 
 
 def load_gui(self):
-    self.btnBrowse = tk.Button(self.master, text = 'Source Folder', width = 13, height = 1, command = FileTransfer_Func.browseSrc)
+    self.btnBrowse = tk.Button(self.master, text = 'Source Folder', width = 13, height = 1, command = FileTransfer_Func.browseSrc(self))
     self.btnBrowse.grid(row = 0, column = 0, padx = (20,0), pady = (30, 0))
 
-    self.btnBrowse = tk.Button(self.master, text = 'Destination Folder', width = 13, height = 1, command = FileTransfer_Func.browseDest)
+    self.btnBrowse = tk.Button(self.master, text = 'Destination Folder', width = 13, height = 1, command = FileTransfer_Func.browseDest(self))
     self.btnBrowse.grid(row = 1, column = 0, padx = (20,0), pady = (30, 0))
         
-    self.btnTransfer = tk.Button(self.master, text = 'Transfer Files', width = 13, height = 1, command = FileTransfer_Func.last_mod_time)
+    self.btnTransfer = tk.Button(self.master, text = 'Transfer Files', width = 13, height = 1, command = FileTransfer_Func.last_mod_time(self))
     self.btnTransfer.grid(row = 1, column = 3, padx = (10,0), pady = (0, 30))
 
-    self.btnClose = tk.Button(self.master, text = 'Close', width = 13, height = 1, command = FileTransfer_Func.ask_quit)
+    self.btnClose = tk.Button(self.master, text = 'Close', width = 13, height = 1, command = FileTransfer_Func.ask_quit(self))
     self.btnClose.grid(row = 2, column = 2, padx = (0,0), pady = (3, 0))
 
     # Calls the "ENTRY" Widget that was imported 

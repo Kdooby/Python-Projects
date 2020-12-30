@@ -33,27 +33,24 @@ def center_window(self, w, h): # pass in the tkinter frame (master) reference an
 
 
 # catch if the user wants to close the app
-def ask_quit():
+def ask_quit(self):
     if messagebox.askokcancel("Exit program", "Okay to exit application?"):
         # This closes app
-        master.destroy(self)
+        self.master.destroy(self)
         os._exit(0)
-    ask_quit()
+    
 
-def browseSrc():
+def browseSrc(self):
     # set where the source of the files are
     source = filedialog.askdirectory()
-    source.filepath.set(filedialog.askopenfilename(initialdir=initialdir,
-                    filetypes=filetypes))
-    browseSrc()
+    self.filepath.set(source)
+    
 
-def browseDest():
+def browseDest(self):
     # set where the source of the files are
     destination = filedialog.askdirectory()
-    destination.filepath.set(filedialog.askopenfilename(initialdir=initialdir,
-                    filetypes=filetypes))
-    browseDest()
-
+    self.filepath2.set(destination)
+    
 
 
 ### TRANSFER FILES SECTION ###
@@ -67,8 +64,8 @@ before = now - seconds_in_day
 
 # set the destination path to folder B
 
-def last_mod_time(fname):
-    return os.path.getmtime(fname)
+def last_mod_time(self):
+    return os.path.getmtime(self)
 
     for fname in os.listdir(source):
         src_fname = os.path.join(source, fname)
