@@ -12,6 +12,8 @@ import tkinter as tk
 from tkinter import messagebox
 from tkinter import filedialog
 from tkinter.filedialog import askopenfile
+import datetime
+from datetime import timedelta
 
 
 import shutil
@@ -36,7 +38,7 @@ def center_window(self, w, h): # pass in the tkinter frame (master) reference an
 def ask_quit(self):
     if messagebox.askokcancel("Exit program", "Okay to exit application?"):
         # This closes app
-        self.master.destroy(self)
+        self.master.destroy()
         os._exit(0)
     
 
@@ -54,22 +56,19 @@ def browseDest(self):
 
 
 ### TRANSFER FILES SECTION ###
-seconds_in_day = 24 * 60 * 60
 
-# The time it is now
-now = time.time()
-    
-# The time it is now, minus the last 24 hours
-before = now - seconds_in_day
+# time 24 hours from now
+hours_ago_24 = datetime.datetime.now() - timedelta(hours = 24)
 
-# set the destination path to folder B
 
 def last_mod_time(fname):
     return os.path.getmtime(fname)
 
     for fname in os.listdir(source):
         src_fname = os.path.join(source, fname)
-        if last_mod_time(src_fname) > before:
+        modTime = os.path.getmtime(src_fname)
+        date_time_of_file = datetime.datetime.fromtimestamp(modTime)
+        if date_time_of_file < hours_ago_24:
             dst_fname = os.path.join(destination, fname)
             shutil.move(src_fname, dst_fname)
                
