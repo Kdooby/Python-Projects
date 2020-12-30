@@ -64,8 +64,8 @@ before = now - seconds_in_day
 
 # set the destination path to folder B
 
-def last_mod_time(self):
-    return os.path.getmtime(self)
+def last_mod_time(fname):
+    return os.path.getmtime(fname)
 
     for fname in os.listdir(source):
         src_fname = os.path.join(source, fname)
