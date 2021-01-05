@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Hello World{% endblock %}
+
+{% block header %}Hello, Welcome to my World{% endblock %}
+
+{% block content %} 
+
+{% for contact in contacts %}
+    <ul>
+        {% if contact == "Bear" %}
+        <li>Hello {{ contact }}</li>
+        {% else %}
+        <li>{{ contact }}</li>
+        {% endif %}
+
+    </ul>
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
