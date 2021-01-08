@@ -7,7 +7,7 @@ TYPE_CHOICES = {
     ('Mrs', 'Mrs'),
     ('Ms', 'Ms'),
     ('Sir', 'Sir'),
-    ("Ma'am", "Ma'am"),
+    
 }
 
 
