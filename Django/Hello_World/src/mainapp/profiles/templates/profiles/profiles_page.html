@@ -12,6 +12,7 @@
             {% csrf_token %}
             <label for="profile_id">Choose a profile to view</label>
             <select id="profile_id" name="profiles" onChange="top.location.href=this.options[this.selectedIndex].value;">
+                <option value="">Select Profiles</option>
             {% for profile in profiles %}
                 <option value="../{{ profile.pk }}/details/">{{ profile.First_Name }}</option>
             {% endfor %}

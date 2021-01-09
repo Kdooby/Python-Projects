@@ -3,10 +3,12 @@ from django.http import HttpResponse
 from .forms import ProfileForm
 from .models import Profiles
 
+
 # Create your views here.
 def profile_console(request):
     profiles = Profiles.object.all()
     return render(request, 'profiles/profiles_page.html', {'profiles':profiles})
+
 
 def details(request, pk):
     pk = int(pk)
@@ -21,6 +23,8 @@ def details(request, pk):
             print(form.errors)
     else:
         return render(request, 'profiles/present_profile.html', {'form':form})
+
+
     
 def delete(request, pk):
     pk = int(pk)
@@ -31,15 +35,7 @@ def delete(request, pk):
     context = {'person':person,}
     return render(request, "profiles/confirmDelete.html", context)
 
-def confirmed(request):
-    if request.method == 'POST':
-        # Creates form instance and binds to data
-        form = ProfileForm(request.POST or None)
-        if form.is_valid():
-            form.delete()
-            return redirect('profile_console')
-        else:
-            return redirect('profile_console')
+
 
 def createRecord(request):
     form = ProfileForm(request.POST or None)
