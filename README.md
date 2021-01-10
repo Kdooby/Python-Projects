@@ -23,5 +23,5 @@
 
 <h3><strong>Checkbook Application</strong></h3>
 
-<p>This project utilizes Python and Django, and is a basic application that allows the user to balance their checkbook.<br>
+<p>This project utilizes Python and Django, and is a basic application that allows the user to balance their checkbook.</p>
   
