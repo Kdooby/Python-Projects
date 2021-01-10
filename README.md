@@ -9,7 +9,7 @@
   <li><a href="https://github.com/Kdooby/Python-Projects/tree/main/Django/CheckbookChallenge"</a>Checkbook Application</li>
   
   
-<h4><strong>Phonebook Application</strong></h4>
-<br>
+<h3><strong>Phonebook Application</strong></h3>
+
 <p>This project functions as a phone book for a user. It allows you to save a contact's name, phone number, and email address<br>
   in a database, as well as lets the user update and delte previously stored entries.</p>
