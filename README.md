@@ -13,3 +13,15 @@
 
 <p>This project functions as a phone book for a user. It allows you to save a contact's name, phone number, and email address<br>
   in a database, as well as lets the user update and delte previously stored entries.</p>
+<br>
+
+<h3><strong>File Transfer</strong></h3>
+
+<p>This project allows the user to transfer files from one chosen directory to another.<br>
+  All files that are moved will be saved in a database</p>
+<br>
+
+<h3><strong>Checkbook Application</strong></h3>
+
+<p>This project utilizes Python and Django, and is a basic application that allows the user to balance their checkbook.<br>
+  
