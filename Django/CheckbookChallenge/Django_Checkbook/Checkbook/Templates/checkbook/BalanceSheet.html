@@ -26,13 +26,13 @@
 					<th>Amount</th>
 					<th>Balance</th>
 				</tr>
-				{% for key, total in table_contents.item %}
+				{% for key, total in table_contents.items %}
 				<tr>
-					<td class="center">{{key.Date}}</td>
-					<td class="center">{{key.Type}}</td>
-					<td class="left">{{key.Description}}</td>
-					<td class="right">{{key.Amount}}</td>
-					<td class="right">{{Total}}</td>
+					<td class="center">{{key.date}}</td>
+					<td class="center">{{key.type}}</td>
+					<td class="left">{{key.description}}</td>
+					<td class="right">{{key.amount}}</td>
+					<td class="right">{{total}}</td>
 				</tr>
 				{% endfor %}
 			</table>
