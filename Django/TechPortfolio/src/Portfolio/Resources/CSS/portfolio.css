@@ -1,0 +1,598 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    opacity: 1; /* This and transition affect the page loading fade in effect */
+    transition: 3s opacity;
+    margin: 0%;
+    color: white;
+    font-family: "helvetica Heue", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    
+    
+}
+/* Sets level of opacity at the page load */
+body.fade.out {
+    opacity: 0; 
+    transition: none;
+}
+
+h2 {
+	font-size: 2vmin;
+}
+
+h3 {
+	font-size: 2vmin;
+}
+
+p {
+	font-size: 2vmin;
+}
+/*---------------------------------
+        HEADER
+----------------------------------*/
+header {
+    color: darkslategray;
+    text-align: left;
+    font-family: sans-serif;
+    font-variant: small-caps;
+    z-index: 1;
+    
+    
+}
+
+
+header span {
+    color: rgb(37, 37, 36);
+    font-family: 'Petit Formal Script', cursive;
+    font-size: 5vmin;
+    letter-spacing: -5px;
+    padding-left: .3em;
+    animation: headerspan 5s infinite;
+    text-shadow: none;
+}
+
+
+@keyframes headerspan {
+	0% {top:0px; left: 40px;}
+	50% {top: 0px; left: 40px; color: transparent}
+	100% {top:0px; left: 40px;}
+}
+
+header h1 {
+    margin-left: .5em;
+    padding-top: 15px;
+    text-shadow: 2px 3px 7px rgba(0, 0, 0, 0.5);
+    font-size: 4vmin;
+}
+
+#grad1 {
+    background-image: linear-gradient(to left, darkslategray, white);
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+    box-shadow: 2px 5px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+
+
+/*--------------------------------------
+        NAV BAR
+---------------------------------------*/
+
+.wrap {
+    height: 100%;
+    width: 100%;
+    /* position: fixed; */
+    overflow: hidden;
+    top: 10%;
+    text-align: center;
+    z-index: 1;
+    
+}
+
+.menu {
+    
+    color: rgb(185, 230, 230);
+    padding: 0;
+    list-style: none;
+    position: relative;
+    margin: 0% auto;
+    display: inline;
+    text-decoration: none;
+   
+}
+
+.menu li {
+    display: inline-block;
+	text-align: center;
+	text-decoration: none;
+    font-variant: small-caps;
+    font-size: 3vmin;
+    letter-spacing: 1pt;
+	color: #000;
+    background-color:#dfe3e9;
+    margin: 0% auto;
+    position: relative;
+    padding: 13px 4%;
+    border: 1px solid #9d9fa2;
+    box-shadow: inset -2px -2px 10px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 16px;
+	cursor: pointer;
+	transition-property: background;
+	transition-duration: .2s;
+	transition-delay: 0s;
+    transition-timing-function: ease-in-out;
+    z-index: 1;
+}
+
+.menu li:hover {
+    color: white;
+    background-color: #b4b5b8;
+    box-shadow: inset 2px 2px 10px 0 rgba(0, 0, 0, 0.7);
+    
+
+}
+
+
+/*---------------------------------------
+        HOME SECTION
+---------------------------------------*/
+
+#typing-video { 
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    filter: grayscale(1);
+    z-index: -1;
+}
+
+.home-text {
+    color: rgb(199, 199, 199);
+    width: 100%;
+    padding: 20px;
+    
+    /* background-color: rgba(0, 0, 0, .1);  */
+}
+
+.home-text h1 {
+    text-align: center;
+    font-size: 6vmin;
+    font-variant: small-caps;
+} 
+
+center {
+	font-family: Perpetua, Rockwell Extra Bold;
+	text-align: center;
+	letter-spacing: 1px;
+	font-size: 3vmin;
+	padding-left: 20px;
+    padding-right: 20px;
+    
+}
+
+
+.home-text center:hover {
+    transition: 2s;
+    transform: scale(1.05);
+
+}  
+
+
+
+/*--------------------------------------------
+            SLIDESHOW STYLEING
+---------------------------------------------*/
+.Slideshow_Background {
+    background: rgba(255, 255, 255, 0.15);
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+
+.Slideshow_Container {
+    width: 40vw;
+    height: auto;
+    padding-top: 4%;
+    position: relative;
+    margin: auto;
+}
+
+.Slideshow img {
+	filter: grayscale(1); 
+    max-width: 100%; 
+    height: auto; 
+    margin: auto;
+	display: block;	/* By specifying block display we can ensure our images are able to be centered */
+    border-radius: 20px;
+    /* box-shadow: 0px 4px 4px 10px black; */    
+}
+
+.Slideshow img:hover {
+    filter: grayscale(0);
+    transition: 2s ease;
+    transform: scale(1.1);
+    overflow: hidden;
+    box-shadow: 0px 6px 10px 10px rgba(49, 80, 80, 0.6);
+}
+
+.mySlides {
+    display: none;
+} 
+/* Fading animation for slideshow */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: fade;
+    animation-duration: 1.5s;  
+    animation-fill-mode: forwards;
+}
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+
+/* Next and previous buttons */
+.Previous, .Next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 1.5vw;
+    margin-top: -0vw;
+    color: darkgray;
+    font-weight: bold;
+    font-size: 2.5vw;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.6s ease;
+  }
+  
+  /* Positioning the right-hand next button */
+  .Next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  /* Hover effect on slide show buttons */
+  .Previous:hover, .Next:hover {
+    background-color: rgb(48, 80, 80, .8);
+    border-radius: 6px;
+    color: white;
+  }
+  
+  /* Slideshow text */
+  .text {
+    color: white;
+    padding: 1vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: Perpetua, Rockwell Extra Bold;
+    letter-spacing: .1vw; 
+    font-size: 1.5vw;
+    background-color: rgba(0,0,0,0.75);
+    font-weight: bold;
+    border-radius: 4px 4px 20px 20px;
+  }
+  
+ 
+  /* Number text. we have set this display to none, which means these are hidden */
+  .Slide_Number {
+    color: white;
+    position: absolute;
+    top: 0;
+    font-family: Perpetua, Rockwell Extra Bold;
+    letter-spacing: .1vw; 
+    font-size: 1.5vw;
+    font-weight: bold;
+    display: none;
+    }
+  
+  /* The dots under the slideshow */
+  .dot {
+    cursor: pointer;
+    height: 1vw;
+    width: 1vw;
+    margin: .25vw;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.4s ease;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Hover effect for slideshow dots */ 
+  .active, .dot:hover {
+    background-color: darkslategrey;
+  }
+  
+ 
+/*============================================
+        ABOUT SECTION
+-=-=-=-=-=-=-=-=-=-=-=-=-=============-------*/
+* {
+    box-sizing: border-box;
+}
+
+.info-container {
+    border: 25px solid rgb(48, 80, 80, .8);
+    
+}
+
+
+.row:after { /* This inserts something after the content of selected elements */
+	content: ""; /* By leaving this blank, we are allowing the footer (covered lower down) to be displayed - removing it makes the footer overwrite a column */
+	display: table; /* The display property specifies the type of display behavior; the table value tells the browser to treat the element as a table */
+	clear: both; /* This clears any other elements from floating on the left or the right of an element */
+}
+
+
+
+
+.about_background {
+    text-align: center;
+    float: left;
+	width: 100%;
+	padding-left: 20px;
+    padding-top: 2%;
+	height: 350px;
+    background-color: rgba(24, 41, 41, 1 ); 
+    /* border:  12px solid rgba(47, 79, 79, 1) ; */
+    background-image: linear-gradient(to right, darkslategray, white, darkslategray);
+
+}
+
+.about_background h2, p {
+    color: black;
+    text-align: center;
+    
+}
+
+.about_background h2:after {  /*This is the underline effect */
+    display: block;
+    content: "";
+    height: 2px;
+    width: 135px;
+    background: darkslategray;
+    margin: 5px auto 50px;
+}
+
+
+
+/*----------------------------------------------------
+        LINKS SECTION
+-----------------------------------------------------*/
+
+
+.column3 {
+	float: left;  
+	width: 50%; /* This ensures one column takes up half the page width */
+	padding: 5px; 
+	padding-top: 1.9%; /* This ensures there is space between the top of the column and our headings */
+	height: 400px; /* This sets the height of our column at 400 pixels - if you change the text within the columns, you will need to adjust the column heights accordingly */
+    background-color: rgba(47, 79, 79, 1 ); 
+    /* border:  12px solid rgba(24, 41, 41, 1) ; */
+    background-image: linear-gradient(to right, darkslategray, white);
+
+}
+.column3 h2 {
+    font-size: 3vmin;
+}
+.column3 h2, p {
+    color: black;
+    text-align: center;
+    
+}
+
+.column3 h2:after {  /*This is the underline effect */
+    display: block;
+    content: "";
+    height: 2px;
+    width: 12vmin;
+    background: darkslategray;
+    margin: 1px auto 5px;
+}
+
+.column3 center {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.column3 img  {
+    display: block;
+    margin: -25px auto;
+    height: 20vmin;
+    max-width: 20vmin;
+    /* box-shadow: 4px 4px 10px black; */
+    border-radius: 40px;
+    
+}
+
+.column3 img:hover  {
+    transition: 1s ease;
+    transform: scale(1.1);
+    overflow: hidden;
+    box-shadow: 0px 8px 15px 6px darkslategray;
+
+}
+
+.column4 {
+    float: left;
+	width: 50%;
+	padding: 5px;
+	padding-top: 2%;
+	height: 400px;
+    background-color: rgba(24, 41, 41, 1 ); 
+    /* border:  12px solid rgba(47, 79, 79, 1) ; */
+    background-image: linear-gradient(to left, darkslategray, white);
+ 
+}
+.column4 h2 {
+    font-size: 3vmin;
+}
+.column4 h2, p {
+    color: black;
+    text-align: center;
+}
+.column4 h2:after {  /*This is the underline effect */
+    display: block;
+    content: "";
+    height: 2px;
+    width: 14vmin;
+    background: darkslategray;
+    margin: 1px auto 5px;
+
+}
+
+
+.column4 img  {
+    display: block;
+    margin: 5px auto;
+    height: 20vmin;
+    max-width: 20vmin;
+    /* box-shadow: 4px 4px 10px black; */
+    border-radius: 20px;
+}
+
+.column4 img:hover  {
+    transition: 1s ease;
+    transform: scale(1.1);
+    overflow: hidden;
+    box-shadow: 0px 8px 15px 6px rgb(43, 70, 70);
+
+}
+
+
+
+/*------------------------------------------------------------
+        CONTACT FORM STYLING
+---------------------------------------------------------*/
+
+@keyframes movePopup { /*Contact button slides in from right on load*/
+    from {right: -40vw;}
+    to {bottom:2vw;}
+}
+
+.Pop_Up_Button { /*Pop Up Contact Button*/
+    position: fixed;
+    bottom: 2vw;
+    right: 1.75vw;
+    width: 20vw;
+    background-color:#dfe3e9;
+    color: black;
+    border: 1px solid #9d9fa2;
+    box-shadow: inset -2px -2px 10px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    cursor: pointer;
+    
+    -webkit-animation: movePopup 3s;
+    animation: movePopup 3s;
+}
+
+/* PopUp Form */
+.form-popup {
+    border: 3px solid #f0f1f0;
+    z-index: 8;
+    display: none;
+    position: fixed;
+    bottom: 6px;
+    right: 6px;
+}
+
+.form-container {
+    max-width: 49vw;
+    padding: 9px;
+    background-color: rgb(112, 144, 144);
+}
+
+
+
+/*====================================================
+        CONTACT FORM
+===================================================*/
+form h3 {
+    color: white;
+    text-align: center;
+}
+
+label {
+    color: white;
+}
+.form-container input[type=text] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    resize: vertical;
+    font-family: Perpetua, Rockwell Extra Bold;
+}
+
+/* submit button */
+.form-container .btn {
+    background-color: darkslategray;
+    color: white;
+    border-color:black;
+    margin-bottom: 1vh;
+}
+
+/* close button */
+.form-container .cancel {
+    background-color: black;
+    color: white;
+    border-color: gray;
+}
+
+/* button styling */
+button {
+    font-family: "helvetica Heue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    letter-spacing: .3vw;
+    font-size: 2vw;
+    padding: 1.2vw 1.5vw;
+    border-style: solid;
+    border-radius: 15px;
+    cursor: pointer;
+    max-width: 50%;
+    height: auto;
+}
+
+button:hover, .form-container .btn:hover {
+    color: white;
+    background-color:rgb(82, 116, 116);
+    box-shadow: inset 2px 2px 10px 0 rgba(0, 0, 0, 0.7);
+    border-style: solid;
+    border-color: silver;
+}
+
+.form-container .cancel:hover{
+    color: white;
+    background-color: rgb(88, 88, 88);
+    border-style: solid;
+    border-color: silver;
+}
+
+
+/*======================================
+        FOOTER
+======================================*/
+
+footer p{
+    color: white;
+    width: 100%;
+    margin: 3px auto;
+    padding: 3px;
+    background-color: black;
+    font-size: 14px;
+    text-align: center;
+}
